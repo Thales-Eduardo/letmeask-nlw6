@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './hooks/Auth';
 
 import { Router } from './routes';
-import GlobalStyle from './styles/global';
+import GlobalStyle from './global/styles/global';
 
 const App: React.FC = () => {
   return (

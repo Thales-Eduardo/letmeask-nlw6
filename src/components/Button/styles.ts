@@ -1,12 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.button`
+interface Props {
+  isOutlined: boolean;
+}
+
+export const Container = styled.button<Props>`
   display: flex;
   align-items: center;
   justify-content: center;
 
   border: 0;
-  margin-top: 64px;
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
@@ -27,4 +30,12 @@ export const Container = styled.button`
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+  ${(props) =>
+    props.isOutlined &&
+    css`
+      background: #fff;
+      border: 1px solid #835afd;
+      color: #835afd;
+    `}
 `;

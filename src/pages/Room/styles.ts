@@ -1,0 +1,135 @@
+import styled, { css } from 'styled-components';
+
+interface Props {
+  islike: boolean;
+}
+
+export const Container = styled.div``;
+
+export const Header = styled.header`
+  padding: 24px;
+  border-bottom: 1px solid #e2e2e2;
+
+  div {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > img {
+      max-height: 45px;
+    }
+
+    > div {
+      display: flex;
+      gap: 16px;
+    }
+  }
+`;
+
+export const Main = styled.main`
+  max-width: 800px;
+  margin: 0 auto;
+
+  > div {
+    margin: 32px 0px 24px;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      color: #29292e;
+    }
+
+    span {
+      margin-left: 16px;
+      background-color: #e559f9;
+      border-radius: 9999px;
+      padding: 8px 16px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+
+  form {
+    textarea {
+      width: 100%;
+      border: 0;
+      padding: 16px;
+      border-radius: 8px;
+      background: #fefefe;
+      box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4);
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+
+      span {
+        font-size: 14px;
+        color: #737388;
+
+        button {
+          background: transparent;
+          border: 0;
+          color: #835afd;
+          text-decoration: underline;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+        }
+
+        span {
+          margin-left: 8px;
+          color: #737388;
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+`;
+
+export const Content = styled.div`
+  max-width: 800px;
+  margin: 32px auto;
+`;
+
+export const LikeButton = styled.button<Props>`
+  display: flex;
+  align-items: flex-end;
+  color: #737380;
+  gap: 5px;
+  transition: filter 0.3;
+
+  ${(props) =>
+    props.islike &&
+    css`
+      color: #835afd;
+      svg path {
+        stroke: #835afd;
+      }
+    `}
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+`;
