@@ -9,14 +9,14 @@ interface User {
 }
 
 interface AuthContextData {
-  user: User;
+  user: User | undefined;
   singIn(): Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const [data, setData] = useState<User>({} as User);
+  const [data, setData] = useState<User>();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -45,7 +45,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const result = await auth.signInWithPopup(provider);
 
     if (result.user) {
-      const { displayName, photoURL, uid } = result.user;
+      const { displayName, photoURL, uid } = result?.user;
 
       if (!displayName || !photoURL) {
         throw new Error('Missing information from Google Account.');

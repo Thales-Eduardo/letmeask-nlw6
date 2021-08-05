@@ -28,7 +28,7 @@ export const NewRoom: React.FC = () => {
 
     const firebaseRoom = await roomRef.push({
       title: newRoom,
-      authorId: user.id,
+      authorId: user?.id,
     });
 
     history.push(`/rooms/${firebaseRoom.key}`);

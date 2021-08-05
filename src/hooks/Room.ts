@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { database } from '../services/firebase';
+
 import { useAuth } from './Auth';
 
 type FirebaseQuestions = Record<
@@ -11,8 +12,8 @@ type FirebaseQuestions = Record<
       avatar: string;
     };
     content: string;
-    isHighlighted: boolean;
     isAnswered: boolean;
+    isHighlighted: boolean;
     likes: Record<
       string,
       {
@@ -29,8 +30,8 @@ interface QuestionProps {
     avatar: string;
   };
   content: string;
-  isHighlighted: boolean;
   isAnswered: boolean;
+  isHighlighted: boolean;
   likeCount: number;
   likeId: string | undefined;
 }
@@ -58,7 +59,7 @@ export function useRoom(roomId: string) {
             isAnswered: value.isAnswered,
             likeCount: Object.values(value.likes ?? {}).length,
             likeId: Object.entries(value.likes ?? {}).find(
-              ([key, like]) => like.authorId === user.id,
+              ([key, like]) => like.authorId === user?.id,
             )?.[0],
           };
         },
@@ -71,7 +72,7 @@ export function useRoom(roomId: string) {
         roomRef.off('value');
       };
     });
-  }, [roomId, user.id]);
+  }, [roomId, user?.id]);
 
   return { questions, title };
 }

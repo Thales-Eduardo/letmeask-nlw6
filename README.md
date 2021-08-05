@@ -1,8 +1,12 @@
 # Letmeask nlw6
 
-# Realtime Database
+---
 
-Regras de negócio.
+# Firebase
+
+Será necessário criar uma conta no Firebase e um projeto para disponibilizar um `Realtime Database`.
+
+Regra de negócios.
 
 ```json
 {
@@ -26,3 +30,9 @@ Regras de negócio.
   }
 }
 ```
+
+# Layout
+
+layout do projeto link abaixo:
+
+- [Figma](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate)

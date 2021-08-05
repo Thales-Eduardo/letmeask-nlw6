@@ -62,3 +62,7 @@ export const Content = styled.div`
 `;
 
 export const DeleteButton = styled.button``;
+
+export const CheckButton = styled.button``;
+
+export const AnswerButton = styled.button``;
