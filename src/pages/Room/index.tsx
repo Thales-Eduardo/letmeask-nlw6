@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg';
 
@@ -22,7 +22,7 @@ export const Room: React.FC = () => {
   const { user } = useAuth();
   const params = useParams<ParamesProps>();
   const [newQuestion, setNewQuestion] = useState('');
-
+  const history = useHistory();
   const roomId = params.id;
 
   const { questions, title } = useRoom(roomId);
@@ -92,7 +92,11 @@ export const Room: React.FC = () => {
           <div>
             {!user ? (
               <span>
-                Para enviar uma pergunta, <button>faça seu login</button>.
+                Para enviar uma pergunta,{' '}
+                <button onClick={() => history.push('/')}>
+                  faça seu login
+                </button>
+                .
               </span>
             ) : (
               <div>

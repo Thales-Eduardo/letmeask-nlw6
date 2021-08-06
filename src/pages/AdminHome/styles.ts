@@ -26,11 +26,11 @@ export const Aside = styled.aside`
     margin-top: 16px;
   }
 
-  > p {
+  p {
     font-size: 24px;
     line-height: 32px;
     margin-top: 16px;
-    color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.primary10};
   }
 
   @media (max-width: 400px) {
@@ -59,9 +59,27 @@ export const Content = styled.div`
     align-self: center;
   }
 
-  h2 {
-    font: 700 24px 'Poppins', sans-serif;
-    margin: 64px 0 24px;
+  div {
+    font-size: 14px;
+    color: ${(props) => props.theme.colors.primary60};
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: ${(props) => props.theme.colors.primary60};
+      margin-right: 16px;
+    }
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: ${(props) => props.theme.colors.primary60};
+      margin-left: 16px;
+    }
   }
 
   form {
@@ -72,6 +90,7 @@ export const Content = styled.div`
 
     input {
       height: 50px;
+      margin-top: 10px;
       border-radius: 8px;
       padding: 0px 16px;
       background: ${(props) => props.theme.colors.primary10};
@@ -81,16 +100,6 @@ export const Content = styled.div`
     > button {
       display: block;
       margin: 16px auto;
-    }
-  }
-
-  p {
-    font-size: 14px;
-    color: ${(props) => props.theme.colors.primary50};
-    margin-top: 16px;
-
-    a {
-      color: ${(props) => props.theme.colors.pink};
     }
   }
 `;

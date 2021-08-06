@@ -57,7 +57,8 @@ export const NewRoom: React.FC = () => {
           </form>
 
           <p>
-            Quer entrar em uma sala já existente? <Link to="/">Click aqui</Link>
+            Quer entrar em uma sala já existente?{' '}
+            <Link to="/admin/home">Click aqui</Link>
           </p>
         </Content>
       </Main>

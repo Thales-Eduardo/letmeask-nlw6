@@ -13,8 +13,8 @@ export const Aside = styled.aside`
   justify-content: center;
   padding: 120px 80px;
 
-  background: #835afd;
-  color: #fff;
+  background: ${(props) => props.theme.colors.secundary};
+  color: ${(props) => props.theme.colors.primary10};
 
   > img {
     max-width: 320px;
@@ -30,7 +30,11 @@ export const Aside = styled.aside`
     font-size: 24px;
     line-height: 32px;
     margin-top: 16px;
-    color: #f8f8f8;
+    color: ${(props) => props.theme.colors.primary10};
+  }
+
+  @media (max-width: 400px) {
+    display: none;
   }
 `;
 
@@ -65,8 +69,8 @@ export const Content = styled.div`
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: #ea4335;
-    color: #fff;
+    background: ${(props) => props.theme.colors.red};
+    color: ${(props) => props.theme.colors.primary10};
     transition: filter 0.2;
 
     > img {
@@ -80,7 +84,7 @@ export const Content = styled.div`
 
   div {
     font-size: 14px;
-    color: #a8a8b3;
+    color: ${(props) => props.theme.colors.primary60};
     margin: 32px 0;
     display: flex;
     align-items: center;
@@ -89,14 +93,14 @@ export const Content = styled.div`
       content: '';
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: ${(props) => props.theme.colors.primary60};
       margin-right: 16px;
     }
     &::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: ${(props) => props.theme.colors.primary60};
       margin-left: 16px;
     }
   }
@@ -111,8 +115,8 @@ export const Content = styled.div`
       height: 50px;
       border-radius: 8px;
       padding: 0px 16px;
-      background: #fff;
-      border: 1px solid #a8a8b3;
+      background: ${(props) => props.theme.colors.primary10};
+      border: 1px solid ${(props) => props.theme.colors.primary60};
     }
 
     > button {

@@ -6,9 +6,9 @@ interface Props {
 }
 
 export const Container = styled.div<Props>`
-  background: #fefefe;
+  background: ${(props) => props.theme.colors.primary20};
   border-radius: 8px;
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 12px ${(props) => props.theme.colors.shadow};
   padding: 24px;
 
   & + div {
@@ -16,21 +16,21 @@ export const Container = styled.div<Props>`
   }
 
   p {
-    color: #29292e;
+    color: ${(props) => props.theme.colors.primary80};
   }
 
   ${(props) =>
     props.isHighlighted &&
     !props.isAnswered &&
     css`
-      background: #f4f0ff;
-      border: 1px solid #835afd;
+      background: ${(props) => props.theme.colors.primary30};
+      border: 1px solid ${(props) => props.theme.colors.secundary};
     `}
 
   ${(props) =>
     props.isAnswered &&
     css`
-      background: #dbdcdd;
+      background: ${(props) => props.theme.colors.primary40};
     `}
 `;
 
@@ -52,7 +52,10 @@ export const Footer = styled.footer<Props>`
 
     span {
       margin-left: 8px;
-      color: ${(props) => (props.isHighlighted ? '#29292E' : '#737380')};
+      color: ${(props) =>
+        props.isHighlighted
+          ? props.theme.colors.primary80
+          : props.theme.colors.primary50};
       font-size: 14px;
     }
 

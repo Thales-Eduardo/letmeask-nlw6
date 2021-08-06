@@ -5,8 +5,8 @@ export const Container = styled.button`
   border-radius: 8px;
   overflow: hidden;
 
-  background: #fff;
-  border: 1px solid #835afd;
+  background: ${(props) => props.theme.colors.primary10};
+  border: 1px solid ${(props) => props.theme.colors.secundary};
 
   display: flex;
   transition: filter 0.8;
@@ -16,7 +16,7 @@ export const Container = styled.button`
   }
 
   > div {
-    background: #835afd;
+    background: ${(props) => props.theme.colors.secundary};
     padding: 0px 12px;
     display: flex;
     justify-content: center;

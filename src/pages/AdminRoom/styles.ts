@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  @media (max-width: 400px) {
+    padding: 10px;
+  }
+`;
 
 export const Header = styled.header`
   padding: 24px;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid ${(props) => props.theme.colors.primary70};
 
   > div {
     max-width: 1120px;
@@ -27,6 +31,16 @@ export const Header = styled.header`
       }
     }
   }
+  @media (max-width: 400px) {
+    > div {
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+      > div {
+        flex-direction: column;
+      }
+    }
+  }
 `;
 
 export const Main = styled.main`
@@ -41,15 +55,15 @@ export const Main = styled.main`
     h1 {
       font-family: 'Poppins', sans-serif;
       font-size: 24px;
-      color: #29292e;
+      color: ${(props) => props.theme.colors.primary80};
     }
 
     span {
       margin-left: 16px;
-      background-color: #e559f9;
+      background-color: ${(props) => props.theme.colors.pink};
       border-radius: 9999px;
       padding: 8px 16px;
-      color: #fff;
+      color: ${(props) => props.theme.colors.primary10};
       font-weight: 500;
       font-size: 14px;
     }

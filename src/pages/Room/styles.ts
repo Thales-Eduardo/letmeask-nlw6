@@ -4,11 +4,15 @@ interface Props {
   islike: boolean;
 }
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  @media (max-width: 400px) {
+    padding: 10px;
+  }
+`;
 
 export const Header = styled.header`
   padding: 24px;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid ${(props) => props.theme.colors.primary70};
 
   div {
     max-width: 1120px;
@@ -26,6 +30,13 @@ export const Header = styled.header`
       gap: 16px;
     }
   }
+  @media (max-width: 400px) {
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
 `;
 
 export const Main = styled.main`
@@ -40,15 +51,15 @@ export const Main = styled.main`
     h1 {
       font-family: 'Poppins', sans-serif;
       font-size: 24px;
-      color: #29292e;
+      color: ${(props) => props.theme.colors.primary80};
     }
 
     span {
       margin-left: 16px;
-      background-color: #e559f9;
+      background-color: ${(props) => props.theme.colors.pink};
       border-radius: 9999px;
       padding: 8px 16px;
-      color: #fff;
+      color: ${(props) => props.theme.colors.primary10};
       font-weight: 500;
       font-size: 14px;
     }
@@ -60,8 +71,8 @@ export const Main = styled.main`
       border: 0;
       padding: 16px;
       border-radius: 8px;
-      background: #fefefe;
-      box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4);
+      background: ${(props) => props.theme.colors.primary20};
+      box-shadow: 0px 2px 12px ${(props) => props.theme.colors.shadow};
       resize: vertical;
       min-height: 130px;
     }
@@ -74,12 +85,12 @@ export const Main = styled.main`
 
       span {
         font-size: 14px;
-        color: #737388;
+        color: ${(props) => props.theme.colors.primary50};
 
         button {
           background: transparent;
           border: 0;
-          color: #835afd;
+          color: ${(props) => props.theme.colors.secundary};
           text-decoration: underline;
           font-size: 14px;
           font-weight: 500;
@@ -99,7 +110,7 @@ export const Main = styled.main`
 
         span {
           margin-left: 8px;
-          color: #737388;
+          color: ${(props) => props.theme.colors.primary50};
           font-weight: 500;
           font-size: 14px;
         }
@@ -116,16 +127,16 @@ export const Content = styled.div`
 export const LikeButton = styled.button<Props>`
   display: flex;
   align-items: flex-end;
-  color: #737380;
+  color: ${(props) => props.theme.colors.primary50};
   gap: 5px;
   transition: filter 0.3;
 
   ${(props) =>
     props.islike &&
     css`
-      color: #835afd;
+      color: ${(props) => props.theme.colors.secundary};
       svg path {
-        stroke: #835afd;
+        stroke: ${(props) => props.theme.colors.secundary};
       }
     `}
 

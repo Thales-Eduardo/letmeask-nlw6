@@ -1,5 +1,27 @@
 # Letmeask nlw6
 
+![img](./docs/mob.png)
+
+[Repositório da rocketseat com o projeto original.](https://github.com/rocketseat-education/nlw-06-reactjs)
+
+---
+
+# Adições feitas no projeto.
+
+- [x] styled-components.
+
+- [x] Estrutura de pasta diferente.
+
+- [x] Controle de autenticação, nas rotas privadas.
+
+- [x] Tema global.
+
+- [x] Switch linght/dark.
+
+- [x] Hook, para salvar o estado do tema escolhido, e gravar no `localStorage`.
+
+- [x] Responsividade.
+
 ---
 
 # Firebase
@@ -30,9 +52,3 @@ Regra de negócios.
   }
 }
 ```
-
-# Layout
-
-layout do projeto link abaixo:
-
-- [Figma](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate)
